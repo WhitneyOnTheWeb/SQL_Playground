@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>DataSource_SimpleSales</DataSourceReference>
+      <CommandText>SELECT 
+    NON EMPTY { [Measures].[SalesDollars] } ON COLUMNS, 
+    NON EMPTY { ([DimSalesDates].[SalesDate].[SalesDate].ALLMEMBERS * 
+                               [DimProducts].[Product].[Product].ALLMEMBERS * 
+                               [DimSales].[Sales Line Item IDs by Sales IDs].[SalesLineItemId].ALLMEMBERS ) } ON ROWS FROM [DWSimpleSales]</CommandText>
+      <rd:DesignerState><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><Type>Query</Type><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items><Item><ID xsi:type="Level"><DimensionName>DimSalesDates</DimensionName><HierarchyName>SalesDate</HierarchyName><HierarchyUniqueName>[DimSalesDates].[SalesDate]</HierarchyUniqueName><LevelName>SalesDate</LevelName><UniqueName>[DimSalesDates].[SalesDate].[SalesDate]</UniqueName></ID><ItemCaption>SalesDate</ItemCaption></Item><Item><ID xsi:type="Level"><DimensionName>DimProducts</DimensionName><HierarchyName>Product</HierarchyName><HierarchyUniqueName>[DimProducts].[Product]</HierarchyUniqueName><LevelName>Product</LevelName><UniqueName>[DimProducts].[Product].[Product]</UniqueName></ID><ItemCaption>Product</ItemCaption></Item><Item><ID xsi:type="Level"><DimensionName>DimSales</DimensionName><HierarchyName>Sales Line Item IDs by Sales IDs</HierarchyName><HierarchyUniqueName>[DimSales].[Sales Line Item IDs by Sales IDs]</HierarchyUniqueName><LevelName>SalesId</LevelName><UniqueName>[DimSales].[Sales Line Item IDs by Sales IDs].[SalesId]</UniqueName></ID><ItemCaption>SalesId</ItemCaption></Item><Item><ID xsi:type="Level"><DimensionName>DimSales</DimensionName><HierarchyName>Sales Line Item IDs by Sales IDs</HierarchyName><HierarchyUniqueName>[DimSales].[Sales Line Item IDs by Sales IDs]</HierarchyUniqueName><LevelName>SalesLineItemId</LevelName><UniqueName>[DimSales].[Sales Line Item IDs by Sales IDs].[SalesLineItemId]</UniqueName></ID><ItemCaption>SalesLineItemId</ItemCaption></Item><Item><ID xsi:type="Measure"><MeasureName>SalesDollars</MeasureName><UniqueName>[Measures].[SalesDollars]</UniqueName></ID><ItemCaption>SalesDollars</ItemCaption><FormattedValue>true</FormattedValue></Item></Items></Select><From>DWSimpleSales</From><Filter><FilterItems /></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement>SELECT 
+    NON EMPTY { [Measures].[SalesDollars] } ON COLUMNS, 
+    NON EMPTY { ([DimSalesDates].[SalesDate].[SalesDate].ALLMEMBERS * 
+                               [DimProducts].[Product].[Product].ALLMEMBERS * 
+                               [DimSales].[Sales Line Item IDs by Sales IDs].[SalesLineItemId].ALLMEMBERS ) } ON ROWS FROM [DWSimpleSales]</Statement><ParameterDefinitions /></Query></QueryDefinition></rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="SalesDate">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[DimSalesDates].[SalesDate].[SalesDate]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Product">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[DimProducts].[Product].[Product]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SalesId">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[DimSales].[Sales Line Item IDs by Sales IDs].[SalesId]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SalesLineItemId">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[DimSales].[Sales Line Item IDs by Sales IDs].[SalesLineItemId]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="SalesDollars">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[SalesDollars]" /&gt;</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

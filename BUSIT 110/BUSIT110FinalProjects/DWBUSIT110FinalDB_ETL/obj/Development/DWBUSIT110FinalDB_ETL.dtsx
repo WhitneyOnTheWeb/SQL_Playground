@@ -1,0 +1,1721 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="3/14/2015 11:32:00 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="POKEDEX"
+  DTS:CreatorName="POKEDEX\Whitney"
+  DTS:DTSID="{81AB1604-B535-479F-AA52-7F7014655B27}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.5058.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="DWBUSIT110FinalDB_ETL"
+  DTS:PackageType="5"
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{272A181D-3E94-4A46-A181-843F49348AC0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.BUSIT110FinalDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{132AE997-DCCC-4A13-8D41-A0A63D6C174F}"
+      DTS:ObjectName="LocalHost.BUSIT110FinalDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=BUSIT110FinalDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.DWBUSIT110FinalDB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{972DE748-B6A7-4EB5-A6D8-E689914BB4F3}"
+      DTS:ObjectName="LocalHost.DWBUSIT110FinalDB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DWBUSIT110FinalDB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Dimension Tables Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{caff3e1d-d956-4ae8-84a6-958cee1643c5}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Dimension Tables Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{d07a9f44-a1ee-477c-80d1-d30ebd118d70}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fill DimClasses Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source"
+                  componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Classes OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+	ClassID = 
+		CAST(ClassID AS int),
+	ClassName = 
+		CAST(ClassName AS nVarchar(100)),
+	CurrentClassPrice = 
+		CAST(CurrentClassPrice AS decimal(18,2))
+FROM BUSIT110FinalDB.dbo.Classes</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.BUSIT110FinalDB]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.BUSIT110FinalDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output].Columns[ClassID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ClassID]"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output].Columns[ClassID]"
+                          name="ClassID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output].Columns[ClassName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ClassName]"
+                          length="100"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output].Columns[ClassName]"
+                          name="ClassName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrentClassPrice]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrentClassPrice]"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrentClassPrice]"
+                          name="CurrentClassPrice"
+                          precision="18"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ClassID]"
+                          dataType="i4"
+                          name="ClassID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ClassName]"
+                          dataType="wstr"
+                          length="100"
+                          name="ClassName" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrentClassPrice]"
+                          dataType="numeric"
+                          name="CurrentClassPrice"
+                          precision="18"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ClassID]"
+                          dataType="i4"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ClassID]"
+                          name="ClassID" />
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ClassName]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ClassName]"
+                          name="ClassName" />
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrentClassPrice]"
+                          dataType="numeric"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrentClassPrice]"
+                          name="CurrentClassPrice"
+                          precision="18"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="DimClasses OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DimClasses]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.DWBUSIT110FinalDB]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.DWBUSIT110FinalDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ClassID]"
+                          cachedDataType="i4"
+                          cachedName="ClassID"
+                          externalMetadataColumnId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClassID]"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output].Columns[ClassID]" />
+                        <inputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ClassName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="ClassName"
+                          externalMetadataColumnId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClassName]"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output].Columns[ClassName]" />
+                        <inputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CurrentClassPrice]"
+                          cachedDataType="numeric"
+                          cachedName="CurrentClassPrice"
+                          cachedPrecision="18"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrentClassPrice]"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrentClassPrice]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClassKey]"
+                          dataType="i4"
+                          name="ClassKey" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClassID]"
+                          dataType="i4"
+                          name="ClassID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClassName]"
+                          dataType="wstr"
+                          length="100"
+                          name="ClassName" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CurrentClassPrice]"
+                          dataType="numeric"
+                          name="CurrentClassPrice"
+                          precision="18"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task.Paths[OLE DB Source Output]"
+                  endId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Dimension Tables Sequence Container\Fill DimDates Execute SQL Task"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{f2c134a5-7585-444b-8bfc-9e5a18f6ec5c}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fill DimDates Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{972DE748-B6A7-4EB5-A6D8-E689914BB4F3}"
+              SQLTask:SqlStatementSource="INSERT INTO [DimDates] &#xA;( [DateKey], [FullDate], [FullDateName], [MonthID], [MonthName], [YearID], [YearName] )&#xA;Values&#xA;  ( -1, Cast('01/01/1900' as datetime), 'Unknown Day', -1, 'Unknown Month', -1 , 'Unknown Year' )&#xA;, ( -2, Cast('01/02/1900' as datetime), 'Corrupt Day', -2, 'Corrupt Month', -2, 'Corrupt Year' )&#xA;--Go&#xA;-- Create variables to hold the start and end date&#xA;DECLARE @StartDate datetime = '01/01/2012'&#xA;DECLARE @EndDate datetime = '12/31/2013' &#xA;&#xA;-- Use a while loop to add dates to the table&#xA;DECLARE @DateInProcess datetime&#xA;SET @DateInProcess = @StartDate&#xA;&#xA;WHILE @DateInProcess &lt;= @EndDate&#xA; BEGIN&#xA; -- Add a row into the date dimension table for this date&#xA; INSERT INTO DimDates &#xA; ( [DateKey], [FullDate], [FullDateName], [MonthID], [MonthName], [YearID], [YearName] )&#xA; VALUES (&#xA;    Cast(Convert(nVarchar(50), @DateInProcess, 112) as int) -- [DateKey] = 20050101 to 20101231&#xA;  , @DateInProcess -- [FullDate] = '2005-01-01 00:00:00.000'&#xA;  , DateName(weekday, @DateInProcess ) + ', ' + DateName(mm, @DateInProcess ) + ' ' +  Convert(nVarchar(50), @DateInProcess, 110) -- [DateKey] = 20050101 to 20101231&#xA;  , Month( @DateInProcess ) + (Year(@DateInProcess ) * 100)  -- [MonthID]   &#xA;  , DateName( month, @DateInProcess ) + ' ' + Cast( Year(@DateInProcess ) as nVarchar(50) ) -- [MonthName]&#xA;  , Year( @DateInProcess ) -- [YearID] &#xA;  , Cast( Year(@DateInProcess ) as nVarchar(50) ) -- [YearName] &#xA;  )  &#xA; -- Add a day and loop again&#xA; SET @DateInProcess = DateAdd(d, 1, @DateInProcess)&#xA; END" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{68746add-f556-4c1d-aa4a-f592f7269d03}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fill DimStudents Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="DimStudents OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[DimStudents]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.DWBUSIT110FinalDB]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.DWBUSIT110FinalDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StudentID]"
+                          cachedDataType="i4"
+                          cachedName="StudentID"
+                          externalMetadataColumnId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentID]"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentID]" />
+                        <inputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StudentFullName]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="StudentFullName"
+                          externalMetadataColumnId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentFullName]"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentFullName]" />
+                        <inputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StudentEmail]"
+                          cachedDataType="wstr"
+                          cachedLength="100"
+                          cachedName="StudentEmail"
+                          externalMetadataColumnId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentEmail]"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentEmail]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentKey]"
+                          dataType="i4"
+                          name="StudentKey" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentID]"
+                          dataType="i4"
+                          name="StudentID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentFullName]"
+                          dataType="wstr"
+                          length="100"
+                          name="StudentFullName" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentEmail]"
+                          dataType="wstr"
+                          length="100"
+                          name="StudentEmail" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source"
+                  componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Students OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
+	StudentID = 
+		CAST(StudentID AS int),
+	StudentFullName = 
+		CAST((StudentFirstName + ' ' + StudentLastName) AS nVarchar(100)),
+	StudentEmail = 
+		CAST(StudentEmail AS nVarchar(100))
+FROM BUSIT110FinalDB.dbo.Students</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.BUSIT110FinalDB]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.BUSIT110FinalDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentID]"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentID]"
+                          name="StudentID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentFullName]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentFullName]"
+                          length="100"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentFullName]"
+                          name="StudentFullName"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentEmail]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentEmail]"
+                          length="100"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentEmail]"
+                          name="StudentEmail"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentID]"
+                          dataType="i4"
+                          name="StudentID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentFullName]"
+                          dataType="wstr"
+                          length="100"
+                          name="StudentFullName" />
+                        <externalMetadataColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentEmail]"
+                          dataType="wstr"
+                          length="100"
+                          name="StudentEmail" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentID]"
+                          dataType="i4"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentID]"
+                          name="StudentID" />
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentFullName]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentFullName]"
+                          name="StudentFullName" />
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentEmail]"
+                          dataType="wstr"
+                          length="100"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentEmail]"
+                          name="StudentEmail" />
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task.Paths[OLE DB Source Output]"
+                  endId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load Dimension Tables Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{ff7cd5a6-48f9-4543-86c9-b7955cb44e13}"
+          DTS:From="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Load Dimension Tables Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{e128486b-d732-470c-af13-1b666a101216}"
+          DTS:From="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Load Dimension Tables Sequence Container\Fill DimDates Execute SQL Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Load Fact Tables Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{bda6be04-de76-4454-928f-3453ed0f735e}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Fact Tables Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{487c9f88-f1e3-413b-a077-d8ab72588242}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Fill FactEnrollments Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="FactEnrollments OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[FactEnrollments]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.DWBUSIT110FinalDB]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.DWBUSIT110FinalDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EnrollmentID]"
+                          cachedDataType="i4"
+                          cachedName="EnrollmentID"
+                          externalMetadataColumnId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EnrollmentID]"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].Columns[EnrollmentID]" />
+                        <inputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EnrollmentDateKey]"
+                          cachedDataType="i4"
+                          cachedName="EnrollmentDateKey"
+                          externalMetadataColumnId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EnrollmentDateKey]"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].Columns[EnrollmentDateKey]" />
+                        <inputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input].Columns[StudentKey]"
+                          cachedDataType="i4"
+                          cachedName="StudentKey"
+                          externalMetadataColumnId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentKey]"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentKey]" />
+                        <inputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ClassKey]"
+                          cachedDataType="i4"
+                          cachedName="ClassKey"
+                          externalMetadataColumnId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClassKey]"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].Columns[ClassKey]" />
+                        <inputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ActualEnrollmentPrice]"
+                          cachedDataType="numeric"
+                          cachedName="ActualEnrollmentPrice"
+                          cachedPrecision="18"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ActualEnrollmentPrice]"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].Columns[ActualEnrollmentPrice]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EnrollmentID]"
+                          dataType="i4"
+                          name="EnrollmentID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EnrollmentDateKey]"
+                          dataType="i4"
+                          name="EnrollmentDateKey" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[StudentKey]"
+                          dataType="i4"
+                          name="StudentKey" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClassKey]"
+                          dataType="i4"
+                          name="ClassKey" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ActualEnrollmentPrice]"
+                          dataType="numeric"
+                          name="ActualEnrollmentPrice"
+                          precision="18"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source"
+                  componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="FactEnrollments OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT        
+	EnrollmentID = 
+		BUSIT110FinalDB.dbo.Enrollments.EnrollmentID,
+--, Enrollments.EnrollmentDate
+	EnrollmentDateKey =
+		DimDates.DateKey,
+--, Enrollments.StudentID
+	StudentKey = 
+		DimStudents.StudentKey,
+--, Enrollments.ClassID
+	ClassKey = 
+		DimClasses.ClassKey,
+	ActualEnrollmentPrice = 
+		BUSIT110FinalDB.dbo.Enrollments.ActualEnrollmentPrice
+FROM BUSIT110FinalDB.dbo.Enrollments
+INNER JOIN DimDates 
+  ON dbo.DimDates.FullDate = BUSIT110FinalDB.dbo.Enrollments.EnrollmentDate
+INNER JOIN DimClasses 
+  ON DWBUSIT110FinalDB.dbo.DimClasses.ClassID = BUSIT110FinalDB.dbo.Enrollments.ClassID 
+INNER JOIN DimStudents 
+  ON DWBUSIT110FinalDB.dbo.DimStudents.StudentID = BUSIT110FinalDB.dbo.Enrollments.StudentID</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[LocalHost.DWBUSIT110FinalDB]"
+                      connectionManagerRefId="Package.ConnectionManagers[LocalHost.DWBUSIT110FinalDB]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].Columns[EnrollmentID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EnrollmentID]"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].Columns[EnrollmentID]"
+                          name="EnrollmentID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].Columns[EnrollmentDateKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EnrollmentDateKey]"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].Columns[EnrollmentDateKey]"
+                          name="EnrollmentDateKey"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentKey]"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].Columns[StudentKey]"
+                          name="StudentKey"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].Columns[ClassKey]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ClassKey]"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].Columns[ClassKey]"
+                          name="ClassKey"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].Columns[ActualEnrollmentPrice]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActualEnrollmentPrice]"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].Columns[ActualEnrollmentPrice]"
+                          name="ActualEnrollmentPrice"
+                          precision="18"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EnrollmentID]"
+                          dataType="i4"
+                          name="EnrollmentID" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EnrollmentDateKey]"
+                          dataType="i4"
+                          name="EnrollmentDateKey" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[StudentKey]"
+                          dataType="i4"
+                          name="StudentKey" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ClassKey]"
+                          dataType="i4"
+                          name="ClassKey" />
+                        <externalMetadataColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ActualEnrollmentPrice]"
+                          dataType="numeric"
+                          name="ActualEnrollmentPrice"
+                          precision="18"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EnrollmentID]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EnrollmentID]"
+                          name="EnrollmentID" />
+                        <outputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EnrollmentDateKey]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EnrollmentDateKey]"
+                          name="EnrollmentDateKey" />
+                        <outputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentKey]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Error Output].Columns[StudentKey]"
+                          name="StudentKey" />
+                        <outputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ClassKey]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ClassKey]"
+                          name="ClassKey" />
+                        <outputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActualEnrollmentPrice]"
+                          dataType="numeric"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ActualEnrollmentPrice]"
+                          name="ActualEnrollmentPrice"
+                          precision="18"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task.Paths[OLE DB Source Output]"
+                  endId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Post Load Tasks Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{d18c63d7-5070-46f1-95f0-dbbee672c837}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Post Load Tasks Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Post Load Tasks Sequence Container\Replace FKs Execute SQL Task"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{e853a52b-baff-4e41-9957-8c2207890d5a}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Replace FKs Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{972DE748-B6A7-4EB5-A6D8-E689914BB4F3}"
+              SQLTask:SqlStatementSource="ALTER TABLE dbo.FactEnrollments ADD CONSTRAINT&#xA;&#x9;FK_FactEnrollments_DimDates FOREIGN KEY&#xA;&#x9;(EnrollmentDateKey) REFERENCES dbo.DimDates(DateKey)&#xA;&#xA;ALTER TABLE dbo.FactEnrollments ADD CONSTRAINT&#xA;&#x9;FK_FactEnrollments_DimStudents FOREIGN KEY&#xA;&#x9;(StudentKey) REFERENCES dbo.DimStudents(StudentKey)&#xA;&#xA;ALTER TABLE dbo.FactEnrollments ADD CONSTRAINT&#xA;&#x9;FK_FactEnrollments_DimClasses FOREIGN KEY&#xA;&#x9;(ClassKey) REFERENCES dbo.DimClasses(ClassKey)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Pre Load Tasks Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{a99cce57-4b62-4f63-b501-9483f2dc12fb}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Pre Load Tasks Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Pre Load Tasks Sequence Container\Clear Tables Execute SQL Task"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9f97728d-f5c6-44b8-81ff-6be7e3c391eb}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Clear Tables Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{972DE748-B6A7-4EB5-A6D8-E689914BB4F3}"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE DimClasses&#xA;TRUNCATE TABLE DimStudents&#xA;TRUNCATE TABLE DimDates&#xA;TRUNCATE TABLE FactEnrollments" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Pre Load Tasks Sequence Container\Drop FKs Execute SQL Task"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{ea998a5e-0e5c-48ad-ae70-73ad7dfe889a}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Drop FKs Execute SQL Task"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{972DE748-B6A7-4EB5-A6D8-E689914BB4F3}"
+              SQLTask:SqlStatementSource="ALTER TABLE FactEnrollments&#xA;&#x9;DROP CONSTRAINT FK_FactEnrollments_DimDates&#xA;ALTER TABLE FactEnrollments&#xA;&#x9;DROP CONSTRAINT FK_FactEnrollments_DimStudents&#xA;ALTER TABLE FactEnrollments&#xA;&#x9;DROP CONSTRAINT FK_FactEnrollments_DimClasses" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Pre Load Tasks Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{11566f63-a835-4aac-bfda-a9c66df70cf0}"
+          DTS:From="Package\Pre Load Tasks Sequence Container\Drop FKs Execute SQL Task"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Pre Load Tasks Sequence Container\Clear Tables Execute SQL Task" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Reset the Database for Testing Execute SQL Task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{8b775c09-9d23-4f48-9cf4-b1c66b88d60d}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Reset the Database for Testing Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{972DE748-B6A7-4EB5-A6D8-E689914BB4F3}"
+          SQLTask:SqlStatementSource="&#xA;--****************** [DWBUSIT110FinalDB] *********************--&#xA;-- This file contains code used to clear and fill &#xA;-- the [DWBUSIT110FinalDB]database tables.&#xA;--********************************************************************--&#xA;USE DWBUSIT110FinalDB&#xA;--GO&#xA;&#xA;--********************************************************************--&#xA;-- Drop Foreign Keys Constraints&#xA;--********************************************************************--&#xA;ALTER TABLE FactEnrollments&#xA;&#x9;DROP CONSTRAINT FK_FactEnrollments_DimDates&#xA;ALTER TABLE FactEnrollments&#xA;&#x9;DROP CONSTRAINT FK_FactEnrollments_DimStudents&#xA;ALTER TABLE FactEnrollments&#xA;&#x9;DROP CONSTRAINT FK_FactEnrollments_DimClasses&#xA;--GO&#xA;&#xA;--********************************************************************--&#xA;-- Clear all tables and reset their Identity Auto Number &#xA;--********************************************************************--&#xA;TRUNCATE TABLE DimClasses&#xA;TRUNCATE TABLE DimStudents&#xA;TRUNCATE TABLE DimDates&#xA;TRUNCATE TABLE FactEnrollments&#xA;--GO&#xA;&#xA;--********************************************************************--&#xA;-- Get DimStudents Data&#xA;--********************************************************************--&#xA;&#xA;SELECT&#xA;&#x9;StudentID = &#xA;&#x9;&#x9;CAST(StudentID AS int),&#xA;&#x9;StudentFullName = &#xA;&#x9;&#x9;CAST((StudentFirstName + ' ' + StudentLastName) AS nVarchar(100)),&#xA;&#x9;StudentEmail = &#xA;&#x9;&#x9;CAST(StudentEmail AS nVarchar(100))&#xA;FROM BUSIT110FinalDB.dbo.Students&#xA;--GO&#xA;&#xA;--********************************************************************--&#xA;-- Get DimClasses Data&#xA;--********************************************************************--&#xA;SELECT &#xA;&#x9;ClassID = &#xA;&#x9;&#x9;CAST(ClassID AS int),&#xA;&#x9;ClassName = &#xA;&#x9;&#x9;CAST(ClassName AS nVarchar(100)),&#xA;&#x9;CurrentClassPrice = &#xA;&#x9;&#x9;CAST(CurrentClassPrice AS decimal(18,2))&#xA;FROM BUSIT110FinalDB.dbo.Classes&#xA;--GO&#xA;&#xA;--********************************************************************--&#xA;-- Get DimDates Data&#xA;--********************************************************************--&#xA;-- Since the date table has no associated source table we can fill the data&#xA;-- using a SQL script &#xA;&#xA;-- Delete From DimDates&#xA;INSERT INTO [DimDates] &#xA;( [DateKey], [FullDate], [FullDateName], [MonthID], [MonthName], [YearID], [YearName] )&#xA;Values&#xA;  ( -1, Cast('01/01/1900' as datetime), 'Unknown Day', -1, 'Unknown Month', -1 , 'Unknown Year' )&#xA;, ( -2, Cast('01/02/1900' as datetime), 'Corrupt Day', -2, 'Corrupt Month', -2, 'Corrupt Year' )&#xA;--Go&#xA;-- Create variables to hold the start and end date&#xA;DECLARE @StartDate datetime = '01/01/2012'&#xA;DECLARE @EndDate datetime = '12/31/2013' &#xA;&#xA;-- Use a while loop to add dates to the table&#xA;DECLARE @DateInProcess datetime&#xA;SET @DateInProcess = @StartDate&#xA;&#xA;WHILE @DateInProcess &lt;= @EndDate&#xA; BEGIN&#xA; -- Add a row into the date dimension table for this date&#xA; INSERT INTO DimDates &#xA; ( [DateKey], [FullDate], [FullDateName], [MonthID], [MonthName], [YearID], [YearName] )&#xA; VALUES (&#xA;    Cast(Convert(nVarchar(50), @DateInProcess, 112) as int) -- [DateKey] = 20050101 to 20101231&#xA;  , @DateInProcess -- [FullDate] = '2005-01-01 00:00:00.000'&#xA;  , DateName(weekday, @DateInProcess ) + ', ' + DateName(mm, @DateInProcess ) + ' ' +  Convert(nVarchar(50), @DateInProcess, 110) -- [DateKey] = 20050101 to 20101231&#xA;  , Month( @DateInProcess ) + (Year(@DateInProcess ) * 100)  -- [MonthID]   &#xA;  , DateName( month, @DateInProcess ) + ' ' + Cast( Year(@DateInProcess ) as nVarchar(50) ) -- [MonthName]&#xA;  , Year( @DateInProcess ) -- [YearID] &#xA;  , Cast( Year(@DateInProcess ) as nVarchar(50) ) -- [YearName] &#xA;  )  &#xA; -- Add a day and loop again&#xA; SET @DateInProcess = DateAdd(d, 1, @DateInProcess)&#xA; END&#xA;--Go&#xA; -- Select * from DimDates&#xA; &#xA; &#xA;--********************************************************************--&#xA;-- Get FactSalesOrders Data&#xA;--********************************************************************--&#xA;--Insert Into [dbo].[FactEnrollments]&#xA;--(EnrollmentID, EnrollmentDateKey, StudentKey, ClassKey, ActualEnrollmentPrice)&#xA;SELECT        &#xA;&#x9;EnrollmentID = &#xA;&#x9;&#x9;BUSIT110FinalDB.dbo.Enrollments.EnrollmentID,&#xA;--, Enrollments.EnrollmentDate&#xA;&#x9;EnrollmentDateKey =&#xA;&#x9;&#x9;DimDates.DateKey,&#xA;--, Enrollments.StudentID&#xA;&#x9;StudentKey = &#xA;&#x9;&#x9;DimStudents.StudentKey,&#xA;--, Enrollments.ClassID&#xA;&#x9;ClassKey = &#xA;&#x9;&#x9;DimClasses.ClassKey,&#xA;&#x9;ActualEnrollmentPrice = &#xA;&#x9;&#x9;BUSIT110FinalDB.dbo.Enrollments.ActualEnrollmentPrice&#xA;FROM BUSIT110FinalDB.dbo.Enrollments&#xA;INNER JOIN DimDates &#xA;  ON dbo.DimDates.FullDate = BUSIT110FinalDB.dbo.Enrollments.EnrollmentDate&#xA;INNER JOIN DimClasses &#xA;  ON DWBUSIT110FinalDB.dbo.DimClasses.ClassID = BUSIT110FinalDB.dbo.Enrollments.ClassID &#xA;INNER JOIN DimStudents &#xA;  ON DWBUSIT110FinalDB.dbo.DimStudents.StudentID = BUSIT110FinalDB.dbo.Enrollments.StudentID&#xA;--Go&#xA;&#xA;--**************************************************************** ****--&#xA;-- Replace Foreign Keys Constraints&#xA;--********************************************************************--&#xA;ALTER TABLE dbo.FactEnrollments ADD CONSTRAINT&#xA;&#x9;FK_FactEnrollments_DimDates FOREIGN KEY&#xA;&#x9;(EnrollmentDateKey) REFERENCES dbo.DimDates(DateKey)&#xA;&#xA;ALTER TABLE dbo.FactEnrollments ADD CONSTRAINT&#xA;&#x9;FK_FactEnrollments_DimStudents FOREIGN KEY&#xA;&#x9;(StudentKey) REFERENCES dbo.DimStudents(StudentKey)&#xA;&#xA;ALTER TABLE dbo.FactEnrollments ADD CONSTRAINT&#xA;&#x9;FK_FactEnrollments_DimClasses FOREIGN KEY&#xA;&#x9;(ClassKey) REFERENCES dbo.DimClasses(ClassKey)&#xA;--GO&#xA;&#xA;--********************************************************************--&#xA;-- Review the results of this script&#xA;--********************************************************************--&#xA;Select 'Database Filled'&#xA;Select [TableName] = '[dbo].[DimClasses]' , [RowCount] = Count(*) from [dbo].[DimClasses]&#xA;Select [TableName] = '[dbo].[DimDates]' , [RowCount] = Count(*) from [dbo].[DimDates]&#xA;Select [TableName] = '[dbo].[DimStudents]' , [RowCount] = Count(*) from [dbo].[DimStudents]&#xA;Select [TableName] = '[dbo].[FactEnrollments]' , [RowCount] = Count(*) from [dbo].[FactEnrollments]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{7e778cdc-f16d-4a39-b95c-c9d74ff881f5}"
+      DTS:From="Package\Pre Load Tasks Sequence Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load Dimension Tables Sequence Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{ab5e0745-db15-443b-8dec-7c580fa599fc}"
+      DTS:From="Package\Load Dimension Tables Sequence Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Load Fact Tables Sequence Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{e967ec96-9381-49fa-b3d8-3b133dce6a99}"
+      DTS:From="Package\Load Fact Tables Sequence Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Post Load Tasks Sequence Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="224,42"
+          Id="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task"
+          TopLeft="28,77" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\Load Dimension Tables Sequence Container\Fill DimDates Execute SQL Task"
+          TopLeft="30,150" />
+        <NodeLayout
+          Size="231,42"
+          Id="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task"
+          TopLeft="27,12" />
+        <EdgeLayout
+          Id="Package\Load Dimension Tables Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="141.25,54">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23"
+              Start="0,0"
+              End="0,15.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Dimension Tables Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="142.25,119">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="309,213"
+          Size="309,256"
+          Id="Package\Load Dimension Tables Sequence Container"
+          TopLeft="583,139" />
+        <NodeLayout
+          Size="246,42"
+          Id="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task"
+          TopLeft="31,14" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="309,78"
+          Size="309,121"
+          Id="Package\Load Fact Tables Sequence Container"
+          TopLeft="241,298" />
+        <NodeLayout
+          Size="224,42"
+          Id="Package\Post Load Tasks Sequence Container\Replace FKs Execute SQL Task"
+          TopLeft="34,17" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="309,79"
+          Size="309,122"
+          Id="Package\Post Load Tasks Sequence Container"
+          TopLeft="584,432" />
+        <NodeLayout
+          Size="225,42"
+          Id="Package\Pre Load Tasks Sequence Container\Clear Tables Execute SQL Task"
+          TopLeft="20,92" />
+        <NodeLayout
+          Size="210,42"
+          Id="Package\Pre Load Tasks Sequence Container\Drop FKs Execute SQL Task"
+          TopLeft="28,16" />
+        <EdgeLayout
+          Id="Package\Pre Load Tasks Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="132.75,58">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="272,156"
+          Size="272,199"
+          Id="Package\Pre Load Tasks Sequence Container"
+          TopLeft="259,66" />
+        <NodeLayout
+          Size="314,42"
+          Id="Package\Reset the Database for Testing Execute SQL Task"
+          TopLeft="592,48" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="531,165.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52,60.1666666666667"
+              Start="0,0"
+              End="44.5,60.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="27.0062111801242,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="27.0062111801242,0"
+                    Point2="31.0062111801242,0"
+                    Point3="31.0062111801242,4" />
+                  <mssgle:LineSegment
+                    End="31.0062111801242,56.1666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.0062111801242,56.1666666666667"
+                    Point2="31.0062111801242,60.1666666666667"
+                    Point3="35.0062111801242,60.1666666666667" />
+                  <mssgle:LineSegment
+                    End="44.5,60.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="583,308.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-33,31.3333333333334"
+              Start="0,0"
+              End="-25.5,31.3333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-12.3595965962811,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-12.3595965962811,0"
+                    Point2="-16.3595965962811,0"
+                    Point3="-16.3595965962811,4" />
+                  <mssgle:LineSegment
+                    End="-16.3595965962811,27.3333333333334" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.3595965962811,27.3333333333334"
+                    Point2="-16.3595965962811,31.3333333333334"
+                    Point3="-20.3595965962811,31.3333333333334" />
+                  <mssgle:LineSegment
+                    End="-25.5,31.3333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="550,377.333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="34,115.666666666667"
+              Start="0,0"
+              End="26.5,115.666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="9.86623164763459,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.86623164763459,0"
+                    Point2="13.8662316476346,0"
+                    Point3="13.8662316476346,4" />
+                  <mssgle:LineSegment
+                    End="13.8662316476346,111.666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.8662316476346,111.666666666667"
+                    Point2="13.8662316476346,115.666666666667"
+                    Point3="17.8662316476346,115.666666666667" />
+                  <mssgle:LineSegment
+                    End="26.5,115.666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source"
+          TopLeft="133,66" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination"
+          TopLeft="135,189" />
+        <EdgeLayout
+          Id="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="227,108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="21.5,81"
+              Start="0,0"
+              End="21.5,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36.5"
+                    Point2="0,40.5"
+                    Point3="4,40.5" />
+                  <mssgle:LineSegment
+                    End="17.5,40.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.5,40.5"
+                    Point2="21.5,40.5"
+                    Point3="21.5,44.5" />
+                  <mssgle:LineSegment
+                    End="21.5,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\Classes OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source"
+          TopLeft="76,54" />
+        <NodeLayout
+          Size="234,42"
+          Id="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination"
+          TopLeft="191,184" />
+        <EdgeLayout
+          Id="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="173.5,96">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="134.5,88"
+              Start="0,0"
+              End="134.5,80.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,40"
+                    Point2="0,44"
+                    Point3="4,44" />
+                  <mssgle:LineSegment
+                    End="130.5,44" />
+                  <mssgle:CubicBezierSegment
+                    Point1="130.5,44"
+                    Point2="134.5,44"
+                    Point3="134.5,48" />
+                  <mssgle:LineSegment
+                    End="134.5,80.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\DimStudents OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dimension Tables Sequence Container\Fill DimStudents Data Flow Task\Students OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source"
+          TopLeft="107,37" />
+        <NodeLayout
+          Size="249,42"
+          Id="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination"
+          TopLeft="171,154" />
+        <EdgeLayout
+          Id="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="221,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.5,75"
+              Start="0,0"
+              End="74.5,67.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,33.5"
+                    Point2="0,37.5"
+                    Point3="4,37.5" />
+                  <mssgle:LineSegment
+                    End="70.5,37.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="70.5,37.5"
+                    Point2="74.5,37.5"
+                    Point3="74.5,41.5" />
+                  <mssgle:LineSegment
+                    End="74.5,67.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Fact Tables Sequence Container\Fill FactEnrollments Data Flow Task\FactEnrollments OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Dimension Tables Sequence Container\Fill DimClasses Data Flow Task\DimClasses OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

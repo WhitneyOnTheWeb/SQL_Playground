@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "KingWhitney Mod5", "KingWhitney Mod5\KingWhitney Mod5.dwproj", "{BF8E1DD7-F58D-4E4F-B8DE-12E30828D604}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF8E1DD7-F58D-4E4F-B8DE-12E30828D604}.Development|Default.ActiveCfg = Development
+		{BF8E1DD7-F58D-4E4F-B8DE-12E30828D604}.Development|Default.Build.0 = Development
+		{BF8E1DD7-F58D-4E4F-B8DE-12E30828D604}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

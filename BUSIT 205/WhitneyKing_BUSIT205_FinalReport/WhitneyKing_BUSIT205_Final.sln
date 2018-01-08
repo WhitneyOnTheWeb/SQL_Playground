@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "WhitneyKing_BUSIT205_Final", "WhitneyKing_BUSIT205_Final.rptproj", "{74A78BD3-ED10-4589-90C0-90A07032AD3E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74A78BD3-ED10-4589-90C0-90A07032AD3E}.Debug|Default.ActiveCfg = Debug
+		{74A78BD3-ED10-4589-90C0-90A07032AD3E}.Debug|Default.Build.0 = DebugLocal
+		{74A78BD3-ED10-4589-90C0-90A07032AD3E}.Debug|Default.Deploy.0 = DebugLocal
+		{74A78BD3-ED10-4589-90C0-90A07032AD3E}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{74A78BD3-ED10-4589-90C0-90A07032AD3E}.DebugLocal|Default.Build.0 = DebugLocal
+		{74A78BD3-ED10-4589-90C0-90A07032AD3E}.DebugLocal|Default.Deploy.0 = DebugLocal
+		{74A78BD3-ED10-4589-90C0-90A07032AD3E}.Release|Default.ActiveCfg = Release
+		{74A78BD3-ED10-4589-90C0-90A07032AD3E}.Release|Default.Build.0 = Release
+		{74A78BD3-ED10-4589-90C0-90A07032AD3E}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

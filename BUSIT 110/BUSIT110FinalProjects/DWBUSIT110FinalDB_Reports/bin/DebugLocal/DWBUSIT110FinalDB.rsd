@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>DWBUSIT110FinalDB</DataSourceReference>
+      <CommandText>SELECT        DimClasses.ClassID, DimClasses.ClassName, DimStudents.StudentID, DimStudents.StudentFullName, DimClasses.CurrentClassPrice, FactEnrollments.ActualEnrollmentPrice, DimDates.DateKey
+FROM            DimClasses INNER JOIN
+                         FactEnrollments ON DimClasses.ClassKey = FactEnrollments.ClassKey INNER JOIN
+                         DimStudents ON FactEnrollments.StudentKey = DimStudents.StudentKey INNER JOIN
+                         DimDates ON FactEnrollments.EnrollmentDateKey = DimDates.DateKey</CommandText>
+    </Query>
+    <Fields>
+      <Field Name="ClassID">
+        <DataField>ClassID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="ClassName">
+        <DataField>ClassName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="StudentFullName">
+        <DataField>StudentFullName</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="StudentID">
+        <DataField>StudentID</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+      <Field Name="CurrentClassPrice">
+        <DataField>CurrentClassPrice</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="ActualEnrollmentPrice">
+        <DataField>ActualEnrollmentPrice</DataField>
+        <rd:TypeName>System.Decimal</rd:TypeName>
+      </Field>
+      <Field Name="DateKey">
+        <DataField>DateKey</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

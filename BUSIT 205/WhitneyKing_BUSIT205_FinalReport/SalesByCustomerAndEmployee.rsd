@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SharedDataSet xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2010/01/shareddatasetdefinition">
+  <DataSet Name="">
+    <Query>
+      <DataSourceReference>DW205Final</DataSourceReference>
+      <CommandText>SELECT NON EMPTY { [Measures].[Sales Dollars] } ON COLUMNS, 
+       NON EMPTY { ([DimSalesDate].[DateName].ALLMEMBERS * 
+	                [DimCustomers].[CustomerName].[CustomerName].ALLMEMBERS * 
+	                [DimEmployees].[EmployeeFullName].[EmployeeFullName].ALLMEMBERS ) } ON ROWS 
+FROM [DW205Final]</CommandText>
+      <rd:DesignerState><QueryDefinition xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/AnalysisServices/QueryDefinition"><CommandType>MDX</CommandType><Type>Query</Type><QuerySpecification xsi:type="MDXQuerySpecification"><Select><Items><Item><ID xsi:type="Level"><DimensionName>DimSalesDate</DimensionName><HierarchyName>DateName</HierarchyName><HierarchyUniqueName>[DimSalesDate].[DateName]</HierarchyUniqueName><LevelName>DateName</LevelName><UniqueName>[DimSalesDate].[DateName].[DateName]</UniqueName></ID><ItemCaption>DateName</ItemCaption></Item><Item><ID xsi:type="Level"><DimensionName>DimCustomers</DimensionName><HierarchyName>CustomerName</HierarchyName><HierarchyUniqueName>[DimCustomers].[CustomerName]</HierarchyUniqueName><LevelName>CustomerName</LevelName><UniqueName>[DimCustomers].[CustomerName].[CustomerName]</UniqueName></ID><ItemCaption>CustomerName</ItemCaption></Item><Item><ID xsi:type="Level"><DimensionName>DimEmployees</DimensionName><HierarchyName>EmployeeFullName</HierarchyName><HierarchyUniqueName>[DimEmployees].[EmployeeFullName]</HierarchyUniqueName><LevelName>EmployeeFullName</LevelName><UniqueName>[DimEmployees].[EmployeeFullName].[EmployeeFullName]</UniqueName></ID><ItemCaption>EmployeeFullName</ItemCaption></Item><Item><ID xsi:type="Measure"><MeasureName>Sales Dollars</MeasureName><UniqueName>[Measures].[Sales Dollars]</UniqueName></ID><ItemCaption>Sales Dollars</ItemCaption><FormattedValue>true</FormattedValue></Item></Items></Select><From>DW205Final</From><Filter><FilterItems /></Filter><Calculations /><Aggregates /><QueryProperties /></QuerySpecification><Query><Statement>SELECT NON EMPTY { [Measures].[Sales Dollars] } ON COLUMNS, 
+       NON EMPTY { ([DimSalesDate].[DateName].ALLMEMBERS * 
+	                [DimCustomers].[CustomerName].[CustomerName].ALLMEMBERS * 
+	                [DimEmployees].[EmployeeFullName].[EmployeeFullName].ALLMEMBERS ) } ON ROWS 
+FROM [DW205Final]</Statement><ParameterDefinitions /></Query></QueryDefinition></rd:DesignerState>
+    </Query>
+    <Fields>
+      <Field Name="DateName">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[DimSalesDate].[DateName].[DateName]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="CustomerName">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[DimCustomers].[CustomerName].[CustomerName]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="EmployeeFullName">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Level" UniqueName="[DimEmployees].[EmployeeFullName].[EmployeeFullName]" /&gt;</DataField>
+        <rd:TypeName>System.String</rd:TypeName>
+      </Field>
+      <Field Name="Sales_Dollars">
+        <DataField>&lt;?xml version="1.0" encoding="utf-8"?&gt;&lt;Field xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xsi:type="Measure" UniqueName="[Measures].[Sales Dollars]" /&gt;</DataField>
+        <rd:TypeName>System.Int32</rd:TypeName>
+      </Field>
+    </Fields>
+  </DataSet>
+</SharedDataSet>

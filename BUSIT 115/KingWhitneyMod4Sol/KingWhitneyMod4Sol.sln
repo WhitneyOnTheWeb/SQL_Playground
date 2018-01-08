@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "KingWhitneyMod4", "KingWhitneyMod4\KingWhitneyMod4.dwproj", "{3E6CC845-C6F8-4958-A4F5-F773F0CF871A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3E6CC845-C6F8-4958-A4F5-F773F0CF871A}.Development|Default.ActiveCfg = Development
+		{3E6CC845-C6F8-4958-A4F5-F773F0CF871A}.Development|Default.Build.0 = Development
+		{3E6CC845-C6F8-4958-A4F5-F773F0CF871A}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

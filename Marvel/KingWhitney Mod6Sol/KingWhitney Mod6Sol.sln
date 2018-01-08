@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "KingWhitney Mod6", "KingWhitney Mod6\KingWhitney Mod6.dwproj", "{FA6BE21C-2DB8-4F11-B373-41B2DE2A0779}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA6BE21C-2DB8-4F11-B373-41B2DE2A0779}.Development|Default.ActiveCfg = Development
+		{FA6BE21C-2DB8-4F11-B373-41B2DE2A0779}.Development|Default.Build.0 = Development
+		{FA6BE21C-2DB8-4F11-B373-41B2DE2A0779}.Development|Default.Deploy.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

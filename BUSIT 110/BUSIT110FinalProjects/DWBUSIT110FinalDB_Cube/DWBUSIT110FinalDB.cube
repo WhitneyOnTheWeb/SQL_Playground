@@ -1,0 +1,228 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="1d6ef504-59da-49b3-846a-9ee9e5e42b23" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>DWBUSIT110FinalDB</ID>
+  <Name>DWBUSIT110FinalDB</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="43b60dfa-5bf1-454f-8ebd-57dc7b8ed407">
+      <ID>DimEnrollments</ID>
+      <Name>DimEnrollments</Name>
+      <DimensionID>FactEnrollments</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="a0374261-6c8d-4a59-8ac1-f43e0f932a38">
+          <AttributeID>EnrollmentID</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="39325939-5038-45f6-8058-314835cb6714">
+      <ID>DimClasses</ID>
+      <Name>DimClasses</Name>
+      <DimensionID>DimClasses</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="42d2e3b3-3987-4ed5-a4ee-f2fcb394e3f2">
+          <AttributeID>ClassKey</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="907428ab-a045-4c73-9db3-54fe76253e6f">
+          <AttributeID>ClassID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="c83d9f79-90a9-41c3-8095-7f07198dceff">
+          <AttributeID>CurrentClassPrice</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="0a16e524-f059-4731-9ec7-3a919a05e62f">
+      <ID>DimStudents</ID>
+      <Name>DimStudents</Name>
+      <DimensionID>DimStudents</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="f640c5a2-e5c8-4197-aa6d-e5f1cbc021f4">
+          <AttributeID>StudentKey</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="4d909d4b-bc72-41ac-9981-5d582660380b">
+          <AttributeID>StudentID</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="503560ae-12d9-4df3-b985-ea86745c62c4">
+          <AttributeID>StudentEmail</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="6786a2d5-4825-418d-a982-30f2ecf87cf5">
+      <ID>DimDates</ID>
+      <Name>DimDates</Name>
+      <DimensionID>DimDates</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="ec5d537d-8325-4b45-acf4-5b9433367bfe">
+          <AttributeID>DateKey</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="46c5cdda-eae1-4731-8670-022064a0d112">
+          <AttributeID>FullDate</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="ed68acc7-8ef5-485d-888b-38bd9a0798b7">
+          <AttributeID>Month</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="a563bc6e-632f-404e-bdce-2a6e11082a81">
+          <AttributeID>Year</AttributeID>
+        </Attribute>
+      </Attributes>
+      <Hierarchies>
+        <Hierarchy dwd:design-time-name="90144dfe-52c4-452d-ac10-4650c03e9bcd">
+          <HierarchyID>Hierarchy</HierarchyID>
+        </Hierarchy>
+      </Hierarchies>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="6bd77ba1-c260-47c5-b21f-db26a7850a5f">
+      <ID>Fact Enrollments</ID>
+      <Name>Fact Enrollments</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="1475113d-c792-4c8e-8d96-db21e005dd3f">
+          <ID>Actual Enrollment Price</ID>
+          <Name>Actual Enrollment Price</Name>
+          <Source dwd:design-time-name="d8aa472b-e8ea-4ade-9194-25cb8987890b">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="6899d437-4394-4a20-9d4f-bedef27461fa">
+              <TableID>dbo_FactEnrollments</TableID>
+              <ColumnID>ActualEnrollmentPrice</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="457e221b-ab47-4b4b-8672-1ca14966b4a3">
+          <ID>Fact Enrollments Count</ID>
+          <Name>Fact Enrollments Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="6b99d374-ee2f-4cb5-8afa-705f61f6d86c">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="03c81b5a-0b83-4281-b192-6833954484d2">
+              <TableID>dbo_FactEnrollments</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="5f2b42b3-4a43-40a5-8345-13f7885bf685">
+          <CubeDimensionID>DimEnrollments</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="56b7c55a-50dc-4144-91c2-372d4fcc8108">
+              <AttributeID>EnrollmentID</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="fe71b1c0-6647-4467-9bea-27a8704cc4c8">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="c7454029-7acb-409c-82a1-84f3e3d9b94c">
+                    <TableID>dbo_FactEnrollments</TableID>
+                    <ColumnID>EnrollmentID</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="1638e765-2ff2-4a47-b514-03ce8609ac00">
+          <CubeDimensionID>DimClasses</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="fa9a1619-e061-4c35-9970-757bffc52fd6">
+              <AttributeID>ClassKey</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="89fd30c5-77a3-4384-83b2-f7f7e8c4e56b">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="e74b1af9-4d5f-46f4-83e2-b595dbcf2804">
+                    <TableID>dbo_FactEnrollments</TableID>
+                    <ColumnID>ClassKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="da81f43e-5cec-4df4-b582-708d98eecc76">
+          <CubeDimensionID>DimDates</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="68e481af-2c33-48ba-aea4-7c14bb6e818e">
+              <AttributeID>DateKey</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="71b5d8e9-630d-4414-a3c7-d7e089d2ac69">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="bcd940e9-da32-4f96-ac6f-c7c020fb5eef">
+                    <TableID>dbo_FactEnrollments</TableID>
+                    <ColumnID>EnrollmentDateKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="252d73e5-4bf3-484b-ae79-87fbdf34d43b">
+          <CubeDimensionID>DimStudents</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="bc7e2e6c-e719-428b-ae96-0f5562324cfc">
+              <AttributeID>StudentKey</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="e09b9aa8-a84d-4953-9d11-6e5585005dbd">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="6d38d986-e513-4aed-a8aa-9a1b7e528cba">
+                    <TableID>dbo_FactEnrollments</TableID>
+                    <ColumnID>StudentKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="ef818643-6093-42b7-818c-87dc5e110497">
+    <DataSourceViewID>DWBUSIT110FinalDB</DataSourceViewID>
+  </Source>
+</Cube>

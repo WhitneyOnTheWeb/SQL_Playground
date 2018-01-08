@@ -1,0 +1,735 @@
+﻿<Database xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>KingWhitneyMod4</ID>
+  <Name>KingWhitneyMod4</Name>
+  <CreatedTimestamp>0001-01-01T08:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T08:00:00Z</LastSchemaUpdate>
+  <LastProcessed>0001-01-01T08:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <LastUpdate>0001-01-01T08:00:00Z</LastUpdate>
+  <DataSourceImpersonationInfo>
+    <ImpersonationMode>Default</ImpersonationMode>
+    <ImpersonationInfoSecurity>Unchanged</ImpersonationInfoSecurity>
+  </DataSourceImpersonationInfo>
+  <MiningStructures>
+    <MiningStructure>
+      <ID>MovieCustomerStructure</ID>
+      <Name>MovieCustomerStructure</Name>
+      <CreatedTimestamp>0001-01-01T08:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T08:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CaseTableName</Name>
+          <Value>dbo_MovieCustomer</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+          <Value>
+            <dds xmlns="">
+              <diagram fontclsid="{0BE35203-8F91-11CE-9DE3-00AA004BB851}" mouseiconclsid="{0BE35204-8F91-11CE-9DE3-00AA004BB851}" defaultlayout="MSDDS.Rectilinear" defaultlineroute="MSDDS.Rectilinear" version="7" nextobject="3" scale="100" pagebreakanchorx="0" pagebreakanchory="0" pagebreaksizex="0" pagebreaksizey="0" scrollleft="-13950" scrolltop="-10067" gridx="150" gridy="150" marginx="5000" marginy="5000" zoom="100" x="34978" y="21987" backcolor="2434342" defaultpersistence="2" PrintPageNumbersMode="3" PrintMarginTop="0" PrintMarginBottom="635" PrintMarginLeft="0" PrintMarginRight="0" marqueeselectionmode="0" mousepointer="0" snaptogrid="0" autotypeannotation="1" showscrollbars="0" viewpagebreaks="0" donotforceconnectorsbehindshapes="1" backpictureclsid="{00000000-0000-0000-0000-000000000000}">
+                <font>
+                  <ddsxmlobjectstreamwrapper binary="01000000900144420100065461686f6d61" />
+                </font>
+                <mouseicon>
+                  <ddsxmlobjectstreamwrapper binary="6c74000000000000" />
+                </mouseicon>
+              </diagram>
+              <layoutmanager>
+                <ddsxmlobj />
+              </layoutmanager>
+              <ddscontrol controlprogid="DdsShapes.DdsObjectManagedBridge.3" tooltip="MovieCustomer" left="20" top="0" logicalid="2" controlid="1" masterid="0" hint1="0" hint2="0" width="3572" height="5000" noresize="0" nomove="0" nodefaultattachpoints="0" autodrag="1" usedefaultiddshape="1" selectable="1" showselectionhandles="1" allownudging="1" isannotation="0" dontautolayout="0" groupcollapsed="0" tabstop="1" visible="1" snaptogrid="0">
+                <control>
+                  <ddsxmlobjectstreaminitwrapper binary="000a0000f40d000088130000" />
+                </control>
+                <layoutobject>
+                  <ddsxmlobj>
+                    <property name="LogicalObject" value="dbo_MovieCustomer" vartype="8" />
+                  </ddsxmlobj>
+                </layoutobject>
+                <shape groupshapeid="0" groupnode="0" />
+              </ddscontrol>
+            </dds>
+          </Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+          <Value>false</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+          <Value>-13950</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+          <Value>-10067</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+          <Value>20</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+          <Value>0</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+          <Value>100</Value>
+        </Annotation>
+      </Annotations>
+      <LastProcessed>0001-01-01T08:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Source xsi:type="DataSourceViewBinding">
+        <DataSourceViewID>DMClassView</DataSourceViewID>
+      </Source>
+      <Columns>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Age</ID>
+          <Name>Age</Name>
+          <Type>Double</Type>
+          <Content>Continuous</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Double</DataType>
+              <DataSize>-1</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>Age</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Customer ID</ID>
+          <Name>Customer ID</Name>
+          <IsKey>true</IsKey>
+          <Type>Double</Type>
+          <Content>Key</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Double</DataType>
+              <DataSize>-1</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>CustomerID</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Education Level</ID>
+          <Name>Education Level</Name>
+          <Type>Text</Type>
+          <Content>Discrete</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>255</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>EducationLevel</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Favorite Channel</ID>
+          <Name>Favorite Channel</Name>
+          <Type>Text</Type>
+          <Content>Discrete</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>255</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>FavoriteChannel</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Gender</ID>
+          <Name>Gender</Name>
+          <Type>Text</Type>
+          <Content>Discrete</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>255</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>Gender</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Home Ownership</ID>
+          <Name>Home Ownership</Name>
+          <Type>Text</Type>
+          <Content>Discrete</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>255</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>HomeOwnership</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Marital Status</ID>
+          <Name>Marital Status</Name>
+          <Type>Text</Type>
+          <Content>Discrete</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>255</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>MaritalStatus</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Movie Selector</ID>
+          <Name>Movie Selector</Name>
+          <Type>Text</Type>
+          <Content>Discrete</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>255</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>MovieSelector</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Num Bathrooms</ID>
+          <Name>Num Bathrooms</Name>
+          <Type>Double</Type>
+          <Content>Discrete</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Double</DataType>
+              <DataSize>-1</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>NumBathrooms</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Num Bedrooms</ID>
+          <Name>Num Bedrooms</Name>
+          <Type>Double</Type>
+          <Content>Continuous</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Double</DataType>
+              <DataSize>-1</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>NumBedrooms</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Num Cars</ID>
+          <Name>Num Cars</Name>
+          <Type>Double</Type>
+          <Content>Continuous</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Double</DataType>
+              <DataSize>-1</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>NumCars</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Num Children</ID>
+          <Name>Num Children</Name>
+          <Type>Double</Type>
+          <Content>Continuous</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Double</DataType>
+              <DataSize>-1</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>NumChildren</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Num T Vs</ID>
+          <Name>Num T Vs</Name>
+          <Type>Double</Type>
+          <Content>Continuous</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>Double</DataType>
+              <DataSize>-1</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>NumTVs</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Prerec Viewing Freq</ID>
+          <Name>Prerec Viewing Freq</Name>
+          <Type>Text</Type>
+          <Content>Discrete</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>255</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>PrerecViewingFreq</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>Theater Freq</ID>
+          <Name>Theater Freq</Name>
+          <Type>Text</Type>
+          <Content>Discrete</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>255</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>TheaterFreq</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>TV Movie Freq</ID>
+          <Name>TV Movie Freq</Name>
+          <Type>Text</Type>
+          <Content>Discrete</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>255</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>TVMovieFreq</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+        <Column xsi:type="ScalarMiningStructureColumn">
+          <ID>TV Signal</ID>
+          <Name>TV Signal</Name>
+          <Type>Text</Type>
+          <Content>Discrete</Content>
+          <KeyColumns>
+            <KeyColumn>
+              <DataType>WChar</DataType>
+              <DataSize>255</DataSize>
+              <Source xsi:type="ColumnBinding">
+                <TableID>dbo_MovieCustomer</TableID>
+                <ColumnID>TVSignal</ColumnID>
+              </Source>
+            </KeyColumn>
+          </KeyColumns>
+        </Column>
+      </Columns>
+      <MiningModels>
+        <MiningModel>
+          <ID>MovieCustomer</ID>
+          <Name>MovieCustomer</Name>
+          <CreatedTimestamp>0001-01-01T08:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T08:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T08:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Algorithm>Microsoft_Clustering</Algorithm>
+          <AlgorithmParameters>
+            <AlgorithmParameter>
+              <Name>CLUSTER_COUNT</Name>
+              <Value xsi:type="xsd:int">4</Value>
+            </AlgorithmParameter>
+          </AlgorithmParameters>
+          <Columns>
+            <Column>
+              <ID>Age</ID>
+              <Name>Age</Name>
+              <SourceColumnID>Age</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Customer ID</ID>
+              <Name>Customer ID</Name>
+              <SourceColumnID>Customer ID</SourceColumnID>
+              <Usage>Key</Usage>
+            </Column>
+            <Column>
+              <ID>Education Level</ID>
+              <Name>Education Level</Name>
+              <SourceColumnID>Education Level</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Favorite Channel</ID>
+              <Name>Favorite Channel</Name>
+              <SourceColumnID>Favorite Channel</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Gender</ID>
+              <Name>Gender</Name>
+              <SourceColumnID>Gender</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Home Ownership</ID>
+              <Name>Home Ownership</Name>
+              <SourceColumnID>Home Ownership</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Marital Status</ID>
+              <Name>Marital Status</Name>
+              <SourceColumnID>Marital Status</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Movie Selector</ID>
+              <Name>Movie Selector</Name>
+              <SourceColumnID>Movie Selector</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Num Bathrooms</ID>
+              <Name>Num Bathrooms</Name>
+              <SourceColumnID>Num Bathrooms</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Num Bedrooms</ID>
+              <Name>Num Bedrooms</Name>
+              <SourceColumnID>Num Bedrooms</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Num Cars</ID>
+              <Name>Num Cars</Name>
+              <SourceColumnID>Num Cars</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Num Children</ID>
+              <Name>Num Children</Name>
+              <SourceColumnID>Num Children</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Num T Vs</ID>
+              <Name>Num T Vs</Name>
+              <SourceColumnID>Num T Vs</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Prerec Viewing Freq</ID>
+              <Name>Prerec Viewing Freq</Name>
+              <SourceColumnID>Prerec Viewing Freq</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Theater Freq</ID>
+              <Name>Theater Freq</Name>
+              <SourceColumnID>Theater Freq</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>TV Movie Freq</ID>
+              <Name>TV Movie Freq</Name>
+              <SourceColumnID>TV Movie Freq</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>TV Signal</ID>
+              <Name>TV Signal</Name>
+              <SourceColumnID>TV Signal</SourceColumnID>
+            </Column>
+          </Columns>
+          <AllowDrillThrough>true</AllowDrillThrough>
+        </MiningModel>
+        <MiningModel>
+          <ID>MovieCustomer2</ID>
+          <Name>MovieCustomer2</Name>
+          <CreatedTimestamp>0001-01-01T08:00:00Z</CreatedTimestamp>
+          <LastSchemaUpdate>0001-01-01T08:00:00Z</LastSchemaUpdate>
+          <LastProcessed>0001-01-01T08:00:00Z</LastProcessed>
+          <State>Unprocessed</State>
+          <Algorithm>Microsoft_Clustering</Algorithm>
+          <AlgorithmParameters>
+            <AlgorithmParameter>
+              <Name>CLUSTER_COUNT</Name>
+              <Value xsi:type="xsd:int">6</Value>
+            </AlgorithmParameter>
+          </AlgorithmParameters>
+          <Columns>
+            <Column>
+              <ID>Age</ID>
+              <Name>Age</Name>
+              <SourceColumnID>Age</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Customer ID</ID>
+              <Name>Customer ID</Name>
+              <SourceColumnID>Customer ID</SourceColumnID>
+              <Usage>Key</Usage>
+            </Column>
+            <Column>
+              <ID>Education Level</ID>
+              <Name>Education Level</Name>
+              <SourceColumnID>Education Level</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Favorite Channel</ID>
+              <Name>Favorite Channel</Name>
+              <SourceColumnID>Favorite Channel</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Gender</ID>
+              <Name>Gender</Name>
+              <SourceColumnID>Gender</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Home Ownership</ID>
+              <Name>Home Ownership</Name>
+              <SourceColumnID>Home Ownership</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Marital Status</ID>
+              <Name>Marital Status</Name>
+              <SourceColumnID>Marital Status</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Movie Selector</ID>
+              <Name>Movie Selector</Name>
+              <SourceColumnID>Movie Selector</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Num Bathrooms</ID>
+              <Name>Num Bathrooms</Name>
+              <SourceColumnID>Num Bathrooms</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Num Bedrooms</ID>
+              <Name>Num Bedrooms</Name>
+              <SourceColumnID>Num Bedrooms</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Num Cars</ID>
+              <Name>Num Cars</Name>
+              <SourceColumnID>Num Cars</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Num Children</ID>
+              <Name>Num Children</Name>
+              <SourceColumnID>Num Children</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Num T Vs</ID>
+              <Name>Num T Vs</Name>
+              <SourceColumnID>Num T Vs</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Prerec Viewing Freq</ID>
+              <Name>Prerec Viewing Freq</Name>
+              <SourceColumnID>Prerec Viewing Freq</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>Theater Freq</ID>
+              <Name>Theater Freq</Name>
+              <SourceColumnID>Theater Freq</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>TV Movie Freq</ID>
+              <Name>TV Movie Freq</Name>
+              <SourceColumnID>TV Movie Freq</SourceColumnID>
+            </Column>
+            <Column>
+              <ID>TV Signal</ID>
+              <Name>TV Signal</Name>
+              <SourceColumnID>TV Signal</SourceColumnID>
+            </Column>
+          </Columns>
+        </MiningModel>
+      </MiningModels>
+    </MiningStructure>
+  </MiningStructures>
+  <DataSources>
+    <DataSource xsi:type="RelationalDataSource">
+      <ID>DMClass</ID>
+      <Name>DMClass</Name>
+      <CreatedTimestamp>0001-01-01T08:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T08:00:00Z</LastSchemaUpdate>
+      <ConnectionString>Provider=SQLNCLI11.1;Data Source=localhost;Integrated Security=SSPI;Initial Catalog=DMClass</ConnectionString>
+      <ConnectionStringSecurity>Unchanged</ConnectionStringSecurity>
+      <ImpersonationInfo>
+        <ImpersonationMode>ImpersonateAccount</ImpersonationMode>
+        <Account>POKEDEX\Whitney</Account>
+        <ImpersonationInfoSecurity>PasswordRemoved</ImpersonationInfoSecurity>
+      </ImpersonationInfo>
+      <Timeout>PT0S</Timeout>
+    </DataSource>
+  </DataSources>
+  <DataSourceViews>
+    <DataSourceView>
+      <ID>DMClassView</ID>
+      <Name>DMClassView</Name>
+      <CreatedTimestamp>0001-01-01T08:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T08:00:00Z</LastSchemaUpdate>
+      <Annotations>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+          <Value>_ALL_TABLES_</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:NameMatchingCriteria</Name>
+          <Value>1</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+          <Value>true</Value>
+        </Annotation>
+        <Annotation>
+          <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+          <Value>
+            <Layouts xmlns="">
+              <Diagram>
+                <Name>_ALL_TABLES_</Name>
+                <DiagramLayout />
+                <ShowRelationshipNames>False</ShowRelationshipNames>
+                <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+                <DiagramViewPortLeft>0</DiagramViewPortLeft>
+                <DiagramViewPortTop>0</DiagramViewPortTop>
+                <DiagramBoundingLeft>0</DiagramBoundingLeft>
+                <DiagramBoundingTop>0</DiagramBoundingTop>
+                <DiagramZoom>100</DiagramZoom>
+              </Diagram>
+            </Layouts>
+          </Value>
+        </Annotation>
+      </Annotations>
+      <DataSourceID>DMClass</DataSourceID>
+      <Schema>
+        <xs:schema id="DMClassView" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+          <xs:element name="DMClassView" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:design-time-name="1a3f66dc-1ca0-4b9e-9d39-3f99b7192a0c">
+            <xs:complexType>
+              <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="dbo_MovieCustomer" msprop:design-time-name="c805323c-740d-412e-b6d8-e6218460f640" msprop:FriendlyName="MovieCustomer" msprop:DbSchemaName="dbo" msprop:DbTableName="MovieCustomer" msprop:TableType="Table">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="Age" msprop:design-time-name="f6b1067d-766b-418f-8510-84747343fe31" msprop:DbColumnName="Age" msprop:FriendlyName="Age" type="xs:double" minOccurs="0" />
+                      <xs:element name="EducationLevel" msprop:design-time-name="a1fdfe44-e60a-42ef-b10c-3b4f05171e74" msprop:DbColumnName="EducationLevel" msprop:FriendlyName="EducationLevel" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="Gender" msprop:design-time-name="60d02fef-53cc-45b7-97f3-e831cca7e1c7" msprop:DbColumnName="Gender" msprop:FriendlyName="Gender" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="HomeOwnership" msprop:design-time-name="6240d293-9236-44e9-8b14-1e1734fdca98" msprop:DbColumnName="HomeOwnership" msprop:FriendlyName="HomeOwnership" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="MaritalStatus" msprop:design-time-name="850252f3-b058-4ed1-947b-dfb5731a8264" msprop:DbColumnName="MaritalStatus" msprop:FriendlyName="MaritalStatus" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="MovieSelector" msprop:design-time-name="f5c6a075-17c5-4416-8f21-243608fb8400" msprop:DbColumnName="MovieSelector" msprop:FriendlyName="MovieSelector" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="NumBathrooms" msprop:design-time-name="739bd741-8458-4b9d-88cb-043be97e548e" msprop:DbColumnName="NumBathrooms" msprop:FriendlyName="NumBathrooms" type="xs:double" minOccurs="0" />
+                      <xs:element name="NumBedrooms" msprop:design-time-name="2beddfe4-87f3-438a-a4cd-9bdb87ea50a9" msprop:DbColumnName="NumBedrooms" msprop:FriendlyName="NumBedrooms" type="xs:double" minOccurs="0" />
+                      <xs:element name="NumCars" msprop:design-time-name="6b00884a-77ae-4131-9ac8-0df5d9c8879b" msprop:DbColumnName="NumCars" msprop:FriendlyName="NumCars" type="xs:double" minOccurs="0" />
+                      <xs:element name="NumChildren" msprop:design-time-name="973893c1-0932-4207-83cf-e3b37cbdc24a" msprop:DbColumnName="NumChildren" msprop:FriendlyName="NumChildren" type="xs:double" minOccurs="0" />
+                      <xs:element name="NumTVs" msprop:design-time-name="c5f6caa5-d12a-480c-b1b7-4510cea2d0b9" msprop:DbColumnName="NumTVs" msprop:FriendlyName="NumTVs" type="xs:double" minOccurs="0" />
+                      <xs:element name="PrerecViewingFreq" msprop:design-time-name="c9819a97-04e4-4c46-9fe4-3c89c819f5b8" msprop:DbColumnName="PrerecViewingFreq" msprop:FriendlyName="PrerecViewingFreq" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="CustomerID" msprop:design-time-name="880a5c4a-be75-4065-9624-d2128235040b" msprop:DbColumnName="CustomerID" msprop:FriendlyName="CustomerID" type="xs:double" minOccurs="0" />
+                      <xs:element name="TheaterFreq" msprop:design-time-name="78b14fad-a54d-4e30-bd10-d634f0de1ef8" msprop:DbColumnName="TheaterFreq" msprop:FriendlyName="TheaterFreq" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="TVMovieFreq" msprop:design-time-name="05585747-b85c-4a45-b75f-40729ff6f0a8" msprop:DbColumnName="TVMovieFreq" msprop:FriendlyName="TVMovieFreq" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="TVSignal" msprop:design-time-name="42b108f7-cc78-4a34-8dd9-41c91136d887" msprop:DbColumnName="TVSignal" msprop:FriendlyName="TVSignal" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                      <xs:element name="FavoriteChannel" msprop:design-time-name="d77e22ab-6dbb-484f-b678-37b5a35c5e10" msprop:DbColumnName="FavoriteChannel" msprop:FriendlyName="FavoriteChannel" minOccurs="0">
+                        <xs:simpleType>
+                          <xs:restriction base="xs:string">
+                            <xs:maxLength value="255" />
+                          </xs:restriction>
+                        </xs:simpleType>
+                      </xs:element>
+                    </xs:sequence>
+                  </xs:complexType>
+                </xs:element>
+              </xs:choice>
+            </xs:complexType>
+          </xs:element>
+        </xs:schema>
+        <DMClassView xmlns="" />
+      </Schema>
+    </DataSourceView>
+  </DataSourceViews>
+</Database>

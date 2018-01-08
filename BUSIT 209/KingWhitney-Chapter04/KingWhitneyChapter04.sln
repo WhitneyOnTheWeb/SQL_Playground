@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "KingWhitney-Chapter04", "KingWhitney-Chapter04.rptproj", "{18BD9F52-AD6E-49A2-A855-87A1DAE8E2FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18BD9F52-AD6E-49A2-A855-87A1DAE8E2FF}.Debug|Default.ActiveCfg = Debug
+		{18BD9F52-AD6E-49A2-A855-87A1DAE8E2FF}.Debug|Default.Build.0 = Debug
+		{18BD9F52-AD6E-49A2-A855-87A1DAE8E2FF}.Debug|Default.Deploy.0 = Debug
+		{18BD9F52-AD6E-49A2-A855-87A1DAE8E2FF}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{18BD9F52-AD6E-49A2-A855-87A1DAE8E2FF}.DebugLocal|Default.Build.0 = DebugLocal
+		{18BD9F52-AD6E-49A2-A855-87A1DAE8E2FF}.Release|Default.ActiveCfg = Release
+		{18BD9F52-AD6E-49A2-A855-87A1DAE8E2FF}.Release|Default.Build.0 = Release
+		{18BD9F52-AD6E-49A2-A855-87A1DAE8E2FF}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

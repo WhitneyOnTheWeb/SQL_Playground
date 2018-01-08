@@ -1,0 +1,270 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="c3972612-9ef3-46e8-8e40-ae2f94ffb860" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>CubeInventoryCounts</ID>
+  <Name>CubeInventoryCounts</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="da4b9d54-ae68-4183-9593-fa559c7a521e">
+      <ID>DimProducts</ID>
+      <Name>DimProducts</Name>
+      <DimensionID>DimProducts</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="4b0ce721-f918-495e-ad8d-c8f5c744ad18">
+          <AttributeID>Product Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="86b54b53-64fd-4de3-bed8-82f8b7223f54">
+      <ID>DimCategories</ID>
+      <Name>DimCategories</Name>
+      <DimensionID>DimCategories</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="d324601f-3b9a-44ee-b00c-793122780d60">
+          <AttributeID>Category Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="2ad9cce5-45d4-4f46-8eaf-a81b836fa531">
+      <ID>DimInventoryDates</ID>
+      <Name>DimInventoryDates</Name>
+      <DimensionID>DimInventoryDates</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="35ff1f79-9bbf-479c-882f-a40204bba1f5">
+          <AttributeID>Inventory Date</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="c1516b30-a2f8-4915-9a01-e2a1645596e9">
+      <ID>DimEmployees</ID>
+      <Name>DimEmployees</Name>
+      <DimensionID>DimEmployees</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="f1e4c727-0d0f-421d-add2-774c8158d651">
+          <AttributeID>Employee Id</AttributeID>
+        </Attribute>
+        <Attribute dwd:design-time-name="b6930582-f633-4ab0-9a54-495df3e5a1d2">
+          <AttributeID>Manager Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="704436bb-ccb6-45ea-962a-003dfcfde44b">
+      <ID>DimInventoryIDs</ID>
+      <Name>DimInventoryIDs</Name>
+      <DimensionID>DimInventoryIDs</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="9796984c-e2d9-418f-bd56-6f0948bfddc1">
+          <AttributeID>Inventory Id</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="0bf9c467-b8b4-42b4-be60-55bfa1223400">
+      <ID>Fact Product Categories</ID>
+      <Name>Fact Product Categories</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="9063f843-7a9f-449a-8c4d-863a0e746583">
+          <ID>Fact Product Categories Count</ID>
+          <Name>Fact Product Categories Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="e0a62602-f567-494e-bdd1-e1cb7f884dae">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="21bc29b3-2f79-4714-af72-242ead3100ff">
+              <TableID>dbo_FactProductCategories</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="9a354a78-d353-4bde-8b6c-f7bcead2738d">
+          <CubeDimensionID>DimProducts</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="d5fcc389-2eea-462c-be9a-bdb17309cb28">
+              <AttributeID>Product Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f8eb27ae-9d80-4004-9f5a-03a925d83df9">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="903a4bf0-d595-4b9a-9867-57f7044ef507">
+                    <TableID>dbo_FactProductCategories</TableID>
+                    <ColumnID>ProductId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="98a58fef-161d-4860-a7ac-18bd93aa00ba">
+          <CubeDimensionID>DimCategories</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="ff9a2ece-099a-45f9-a1e0-55d962269412">
+              <AttributeID>Category Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="e602d2ad-7e5f-451c-af6a-bd4d7e24321d">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="9e00c83c-a74d-4f25-9889-d41c99027017">
+                    <TableID>dbo_FactProductCategories</TableID>
+                    <ColumnID>CategoryId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+    <MeasureGroup dwd:design-time-name="fc3f54a2-80da-4af2-ae2f-0e1765c511db">
+      <ID>Fact Inventories</ID>
+      <Name>Fact Inventories</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="a51feb83-6908-40a0-89a9-21d6db781458">
+          <ID>Inventory Count</ID>
+          <Name>Inventory Count</Name>
+          <Source dwd:design-time-name="6cbf18da-14ae-49dd-bf5a-f794e3d24fab">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="77a064de-0220-465a-b95e-b34a1e442b23">
+              <TableID>dbo_FactInventories</TableID>
+              <ColumnID>InventoryCount</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="948a59f1-9c68-41e0-bc24-1ee59eafcc13">
+          <CubeDimensionID>DimInventoryDates</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="0b3793f0-001f-42e8-b87e-3d42c012692f">
+              <AttributeID>Inventory Date</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="f3bab7fd-5b30-436f-be70-d81f9c03fd87">
+                  <DataType>Date</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="398e3bb9-96e2-48a6-a898-4be181414247">
+                    <TableID>dbo_FactInventories</TableID>
+                    <ColumnID>InventoryDate</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="16cae3e5-bb14-418e-b0d0-47ee3f9ecb19">
+          <CubeDimensionID>DimProducts</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="7bb7b6f7-6a58-4d86-9a11-c32818fdfbec">
+              <AttributeID>Product Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="b8a9ba10-d4f7-4796-94f0-e80388f7de56">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="396bfdb9-aa6c-4826-90f5-704714f9f9e2">
+                    <TableID>dbo_FactInventories</TableID>
+                    <ColumnID>ProductId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="60a0ca8f-cfb1-45ef-8080-c44c943ea7f3">
+          <CubeDimensionID>DimEmployees</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="8546c9f4-8bdb-4726-a37d-7ed76232aa42">
+              <AttributeID>Employee Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="bdbdeac9-6779-4fa0-9931-ef2a9068d158">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="eb3686d5-9b32-4bb3-a46b-3b1aea4b13bc">
+                    <TableID>dbo_FactInventories</TableID>
+                    <ColumnID>EmployeeId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="52cd40fb-f735-4de9-9e74-c41fc98a192c">
+          <CubeDimensionID>DimInventoryIDs</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="461e7bd9-8c23-4b47-8c16-7d6adf886844">
+              <AttributeID>Inventory Id</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="755192de-b809-40aa-b5b1-e16869658238">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="33408ae6-6658-4479-be87-cef627dde1b2">
+                    <TableID>dbo_FactInventories</TableID>
+                    <ColumnID>InventoryId</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="ManyToManyMeasureGroupDimension" dwd:design-time-name="f15cf0b4-a30a-4f56-b45b-015dcd1df9ce">
+          <CubeDimensionID>DimCategories</CubeDimensionID>
+          <MeasureGroupID>Fact Product Categories</MeasureGroupID>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="df480587-1e0d-484a-a28b-106b600d6aa4">
+    <DataSourceViewID>DWInventoryManager</DataSourceViewID>
+  </Source>
+</Cube>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "King-Chapter07", "King-Chapter07.rptproj", "{44213859-FB1A-478B-AE44-E1792FE80F10}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{44213859-FB1A-478B-AE44-E1792FE80F10}.Debug|Default.ActiveCfg = Debug
+		{44213859-FB1A-478B-AE44-E1792FE80F10}.Debug|Default.Build.0 = Debug
+		{44213859-FB1A-478B-AE44-E1792FE80F10}.Debug|Default.Deploy.0 = Debug
+		{44213859-FB1A-478B-AE44-E1792FE80F10}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{44213859-FB1A-478B-AE44-E1792FE80F10}.DebugLocal|Default.Build.0 = DebugLocal
+		{44213859-FB1A-478B-AE44-E1792FE80F10}.Release|Default.ActiveCfg = Release
+		{44213859-FB1A-478B-AE44-E1792FE80F10}.Release|Default.Build.0 = Release
+		{44213859-FB1A-478B-AE44-E1792FE80F10}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

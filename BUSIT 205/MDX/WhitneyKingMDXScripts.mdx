@@ -1,0 +1,53 @@
+																					-- Whitney King
+																					-- Module 07 | BUSIT 205
+																					-- 5/21/2016
+
+-------Select Statement Template---------------------------------------------------------------------------------------------------
+/*
+SELECT
+{ } ON Columns,  -- Axis 0
+{ } ON Rows		 -- Axis 1
+FROM { }
+WHERE ();
+*/
+
+-------First simple MDX statement--------------------------------------------------------------------------------------------------
+
+SELECT										-- Count of total book sales
+{ [DimStores].[Store].[Store] } ON Columns	-- Displays one column of sales per store name
+FROM [CubePubsSales]
+GO
+
+-- This statement could have worked without the 'ON Columns' line, however I wanted to
+-- ensure that I made an effort to differentiate my simple MDX statement from the most
+-- basic one learned in the examples. This is useful info, but could be more useful if
+-- we were to drill deeper down into the breakdown of sales numbers.
+
+-------Second more complex MDX statement-------------------------------------------------------------------------------------------
+
+SELECT													 -- Count of total book sales
+{ [DimStores].[Store].[Store] } ON Columns,		         -- Displays one column of sales per store name
+{ [DimTitles].[Publisher].[Publisher] } ON Rows  -- Displays one row for each publisher
+FROM [CubePubsSales]
+GO
+
+-- This statement will display a grid that builds off the previous statement by adding 
+-- one row of sales totals for each publisher by bookstore. We run into some annoyances
+-- with how information is displayed however, as some publishers haven't sold any books,
+-- we can't see when they were sold.
+
+-------Third even more complex MDX statement---------------------------------------------------------------------------------------
+
+SELECT																 -- Count of total book sales
+{ [DimStores].[Store].[Store] } ON Columns,							 -- Displays one column of sales per store name
+{ NonEmpty( CROSSJOIN( [DimDates].[Year].AllMembers,
+					   [DimTitles].[Publisher].[Publisher].AllMembers
+		             ) ) } ON Rows  -- Displays one row for each publisher with booksales
+FROM [CubePubsSales]
+GO
+
+-- This statement will display a grid that filters out results for any bookstores that
+-- haven't sold any books by using the NonEmpty function. Additionally, to help get a 
+-- better idea of how books are selling over time, I've used a crossjoin with the year
+-- member of the date dimension that shows how many books were sold by publisher in a
+-- given year of sales (as well as a total for all years).

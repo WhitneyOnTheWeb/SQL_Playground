@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "SalesCubes", "SalesCubes\SalesCubes.dwproj", "{9FF1CCAA-C343-44B7-82E7-D18DF9D6AEC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DWSimpleSales", "DWSimpleSales", "{1A017619-6151-449B-85F9-E22F1B6A114F}"
+	ProjectSection(SolutionItems) = preProject
+		DWSimpleSales\SimpleSalesDemoDWForMod08.sql = DWSimpleSales\SimpleSalesDemoDWForMod08.sql
+	EndProjectSection
+EndProject
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "WhitneyKingSSRSTutorial", "WhitneyKingSSRSTutorial1\WhitneyKingSSRSTutorial.rptproj", "{E3ADB55C-4CCB-49AC-AD85-1EE4826AF9A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Development|Default = Development|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FF1CCAA-C343-44B7-82E7-D18DF9D6AEC3}.Debug|Default.ActiveCfg = Development
+		{9FF1CCAA-C343-44B7-82E7-D18DF9D6AEC3}.Debug|Default.Build.0 = Development
+		{9FF1CCAA-C343-44B7-82E7-D18DF9D6AEC3}.Debug|Default.Deploy.0 = Development
+		{9FF1CCAA-C343-44B7-82E7-D18DF9D6AEC3}.DebugLocal|Default.ActiveCfg = Development
+		{9FF1CCAA-C343-44B7-82E7-D18DF9D6AEC3}.DebugLocal|Default.Build.0 = Development
+		{9FF1CCAA-C343-44B7-82E7-D18DF9D6AEC3}.DebugLocal|Default.Deploy.0 = Development
+		{9FF1CCAA-C343-44B7-82E7-D18DF9D6AEC3}.Development|Default.ActiveCfg = Development
+		{9FF1CCAA-C343-44B7-82E7-D18DF9D6AEC3}.Development|Default.Build.0 = Development
+		{9FF1CCAA-C343-44B7-82E7-D18DF9D6AEC3}.Development|Default.Deploy.0 = Development
+		{9FF1CCAA-C343-44B7-82E7-D18DF9D6AEC3}.Release|Default.ActiveCfg = Development
+		{9FF1CCAA-C343-44B7-82E7-D18DF9D6AEC3}.Release|Default.Build.0 = Development
+		{9FF1CCAA-C343-44B7-82E7-D18DF9D6AEC3}.Release|Default.Deploy.0 = Development
+		{E3ADB55C-4CCB-49AC-AD85-1EE4826AF9A0}.Debug|Default.ActiveCfg = DebugLocal
+		{E3ADB55C-4CCB-49AC-AD85-1EE4826AF9A0}.Debug|Default.Build.0 = DebugLocal
+		{E3ADB55C-4CCB-49AC-AD85-1EE4826AF9A0}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{E3ADB55C-4CCB-49AC-AD85-1EE4826AF9A0}.DebugLocal|Default.Build.0 = DebugLocal
+		{E3ADB55C-4CCB-49AC-AD85-1EE4826AF9A0}.Development|Default.ActiveCfg = DebugLocal
+		{E3ADB55C-4CCB-49AC-AD85-1EE4826AF9A0}.Development|Default.Build.0 = DebugLocal
+		{E3ADB55C-4CCB-49AC-AD85-1EE4826AF9A0}.Release|Default.ActiveCfg = Release
+		{E3ADB55C-4CCB-49AC-AD85-1EE4826AF9A0}.Release|Default.Build.0 = Release
+		{E3ADB55C-4CCB-49AC-AD85-1EE4826AF9A0}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

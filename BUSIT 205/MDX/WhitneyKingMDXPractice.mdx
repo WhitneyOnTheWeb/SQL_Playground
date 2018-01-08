@@ -1,0 +1,42 @@
+-- Write a Query that returns the Sales Qty by Store "BookBeat"
+-- Version 1: Using a member's name
+Select
+{ [Measures].[SalesQuantity] } on Columns,
+{ [DimStores].[Store].[Store].[BookBeat] } On Rows -- Using the Name
+From [CubePubsSales]
+GO
+-- Version 2: Using a member's key
+Select
+{ [Measures].[SalesQuantity] } on Columns,
+{ [DimStores].[Store].&[6] } On Rows -- Using the Key
+From [CubePubsSales]
+GO
+-- Version 3: Using a member's key and the default measure
+Select [DimStores].[Store].&[6] On Columns
+From [CubePubsSales]
+GO
+
+
+Select
+{
+[Measures].[SalesQuantity]
+, [Measures].[NumberOfSales]
+} On Columns,
+{
+( [DimStores].[Store].[BookBeat] )
+,( [DimStores].[Store].[Eric The Read Books] )
+} On Rows
+From [CubePubsSales]
+GO
+
+
+SELECT
+NON EMPTY { [Measures].[SalesQuantity] } ON COLUMNS
+, NON EMPTY { (
+[DimDates].[Year].[Year].ALLMEMBERS
+*
+[DimTitles].[Title].[Title].ALLMEMBERS
+) }
+ON ROWS
+FROM [CubePubsSales]
+GO
